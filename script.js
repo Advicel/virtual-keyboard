@@ -58,6 +58,7 @@ const buttons = [
     { code: 'MetaLeft', en: 'Win', ru: 'Win', printable: false },
     { code: 'AltLeft', en: 'Alt', ru: 'Alt', printable: false },
     { code: 'Space', en: ' ', ru: ' ', printable: true },
+    { code: 'AltRight', en: 'Alt', ru: 'Alt', printable: false },
     { code: 'ArrowLeft', en: '◄', ru: '◄', printable: true },
     { code: 'ArrowDown', en: '▼', ru: '▼', printable: true },
     { code: 'ArrowRight', en: '►', ru: '►', printable: true },
@@ -145,6 +146,7 @@ onClick = (event)=>{
     }
 }
 onButtonAction(button){
+    console.log(button);
     if(button.printable){
         this.printLetter(button);
         return;
@@ -250,6 +252,7 @@ changeLanguage(){
     this.fillButtonsNames();
 }
 
+
 setCursorPosition(position) {
     this.elements.textarea.selectionStart = position;
     this.elements.textarea.selectionEnd = position;
@@ -313,6 +316,22 @@ function createKeys(){
     return keysFragment;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 window.addEventListener('load', () => {
     const keyboard = new Keyboard();
     const element = document.createElement('div');
